@@ -1,6 +1,7 @@
 <h1 mat-dialog-tittle>Agregar estudiante</h1>
 <div mat-dialog-content>
   <form class="flex flex-column" [formGroup]="studentForm">
+
     <mat-form-field appearance="fill">
       <mat-label>Nombre</mat-label>
       <input [formControl]="firstNameControl" matInput placeholder="Nombre">
@@ -10,8 +11,8 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Apellido</mat-label>
-      <input matInput placeholder="Apellido">
-      <mat-icon [formControl]="lastNameControl" matSuffix> sentiment_very_satisfield</mat-icon>
+      <input [formControl]="lastNameControl" matInput placeholder="Apellido">
+      <mat-icon matSuffix> sentiment_very_satisfield</mat-icon>
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
 
@@ -28,5 +29,17 @@
       <mat-icon matSuffix> sentiment_very_satisfield</mat-icon>
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre del Curso</mat-label>
+      <input [formControl]="nameCourseControl" matInput placeholder="Nombre del curso">
+      <mat-icon matSuffix> sentiment_very_satisfield</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
   </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()"> Cancelar</button>
+  <button mat-button [mat-dialog-close]="studentForm.value" cdkFocusInitial>Agregar</button>
+
 </div>

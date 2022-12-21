@@ -15,11 +15,35 @@ export class StudentsPageComponent {
     new Student(3, 'Sakura', 'Haruno', 'spring', '2525', 'React', false),
     new Student(4, 'Kakashi', 'Hatake', 'winter', '5678', 'Angular', true)
   ]
-  displayedColumns = ['id', 'firstName', 'lastName', 'isActive', 'edit', 'delete'];
+  displayedColumns = ['id', 'firstName', 'lastName', 'direction', 'directionId', 'nameCourse', 'isActive', 'edit', 'delete'];
 
   constructor(private readonly dialogService: MatDialog) { }
 
   addStudent() {
-    this.dialogService.open(StudentDialogComponent)
+    const dialog = this.dialogService.open(StudentDialogComponent)
+
+    dialog.afterClosed().subscribe((value) => {
+      if (value) {
+        const lastId = this.students[this.students.length - 1]?.id;
+
+        this.students = [...this.students, new Student(lastId + 1, value.firstName, value.lastName, value.direction, value.directionId, value.nameCourse, true)]
+      }
+    })
+  }
+
+  removeStudent(student: Student) {
+    this.students = this.students.filter((stu) => stu.id !== student.id
+    )
+  }
+
+  editStudent(student: Student) {
+    const dialog = this.dialogService.open(StudentDialogComponent, {
+      data: student,
+    })
+    dialog.afterClosed().subscribe((data) => {
+      if (data) {
+        this.students = this.students.map((stu) => stu.id === student.id ? { ...stu, ...data } : stu)
+      }
+    })
   }
 }
