@@ -10,10 +10,10 @@ import { StudentDialogComponent } from '../../shared/components/student-dialog/s
 })
 export class StudentsPageComponent {
   students: Student[] = [
-    new Student(1, 'Naruto', 'Uzumai', true),
-    new Student(2, 'Sasuke', 'Uchiha', false),
-    new Student(3, 'Sakura', 'Haruno', false),
-    new Student(4, 'Kakashi', 'Hatake', true)
+    new Student(1, 'Naruto', 'Uzumai', 'autumn', '1234', 'fullstack', true),
+    new Student(2, 'Sasuke', 'Uchiha', 'summer', '3435', 'desrrolo web', false),
+    new Student(3, 'Sakura', 'Haruno', 'spring', '2525', 'React', false),
+    new Student(4, 'Kakashi', 'Hatake', 'winter', '5678', 'Angular', true)
   ]
   displayedColumns = ['id', 'firstName', 'lastName', 'isActive', 'edit', 'delete'];
 

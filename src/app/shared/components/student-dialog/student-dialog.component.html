@@ -1,5 +1,32 @@
 <h1 mat-dialog-tittle>Agregar estudiante</h1>
 <div mat-dialog-content>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia hic excepturi possimus, culpa explicabo, quas
-    nisi neque unde sit ea sunt nulla architecto qui veniam ut repellendus! Beatae, vel earum?</p>
+  <form class="flex flex-column" [formGroup]="studentForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input [formControl]="firstNameControl" matInput placeholder="Nombre">
+      <mat-icon matSuffix> sentiment_very_satisfield</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input matInput placeholder="Apellido">
+      <mat-icon [formControl]="lastNameControl" matSuffix> sentiment_very_satisfield</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Diereccion</mat-label>
+      <input [formControl]="directionControl" matInput placeholder="Direccion">
+      <mat-icon matSuffix> sentiment_very_satisfield</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>N° de Casa</mat-label>
+      <input [formControl]="directionIdControl" matInput placeholder="Numero">
+      <mat-icon matSuffix> sentiment_very_satisfield</mat-icon>
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </form>
 </div>
