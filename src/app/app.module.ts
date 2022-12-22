@@ -8,6 +8,9 @@ import { StudentsPageComponent } from './pages/students-page/students-page.compo
 import { MyMaterialModule } from './shared/modules/my-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentDialogComponent } from './shared/components/student-dialog/student-dialog.component';
+import { SidenavComponent } from './shared/layout/sidenav/sidenav.component';
+import { HomeComponent } from './shared/layout/home/home.component';
+import { ContactoComponent } from './shared/layout/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { StudentDialogComponent } from './shared/components/student-dialog/stude
     HeaderComponent,
     PageWrapperComponent,
     StudentsPageComponent,
-    StudentDialogComponent
+    StudentDialogComponent,
+    SidenavComponent,
+    HomeComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
