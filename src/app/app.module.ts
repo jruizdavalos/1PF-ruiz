@@ -11,6 +11,8 @@ import { StudentDialogComponent } from './shared/components/student-dialog/stude
 import { SidenavComponent } from './shared/layout/sidenav/sidenav.component';
 import { HomeComponent } from './shared/layout/home/home.component';
 import { ContactoComponent } from './shared/layout/contacto/contacto.component';
+import { ContactoclearComponent } from './shared/layout/contactoclear/contactoclear.component';
+import { StudentPipe } from './shared/pipe/student.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { ContactoComponent } from './shared/layout/contacto/contacto.component';
     StudentDialogComponent,
     SidenavComponent,
     HomeComponent,
-    ContactoComponent
+    ContactoComponent,
+    ContactoclearComponent,
+    StudentPipe,
+
   ],
   imports: [
     BrowserModule,
