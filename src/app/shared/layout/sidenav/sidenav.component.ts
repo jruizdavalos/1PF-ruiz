@@ -10,7 +10,7 @@ export class SidenavComponent implements OnInit {
   mobileQuery: MediaQueryList;
 
   fillerNav = [
-    { name: "home", route: "", icon: "home" },
+    { name: "home", route: "home", icon: "home" },
     { name: "contacto", route: "contacto", icon: "perm_contact_calendar" }
   ]
 
